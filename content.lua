@@ -166,7 +166,7 @@ Menu.Parent = ContentFrame
 Menu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Menu.BackgroundTransparency = 1.000
 Menu.Size = UDim2.new(1, 0, 1, 0)
-Menu.ZIndex = 2
+Menu.ZIndex = 2s
 
 UIListLayout.Parent = Menu
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -232,4 +232,5 @@ end)
    end)
 
 end
+notification("Universus loaded")
 return Universus
