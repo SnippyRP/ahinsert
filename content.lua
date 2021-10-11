@@ -5,12 +5,37 @@ local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local Mouse = game.Players.LocalPlayer:GetMouse()
 
+local MainGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ContentFrame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Menu = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local UIGradient = Instance.new("UIGradient")
+local UIGradient_2 = Instance.new("UIGradient")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding = Instance.new("UIPadding")
+local UICorner_4 = Instance.new("UICorner")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+local UIGradient_3 = Instance.new("UIGradient")
+local UIGradient_4 = Instance.new("UIGradient")
+local Circle = Instance.new("ImageLabel")
+
+Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Circle.BackgroundTransparency = 1.000
+Circle.ZIndex = 10
+Circle.Image = "rbxassetid://266543268"
+Circle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+Circle.ImageTransparency = 0.900
+
 function CircleClick(Button, X, Y)
 	coroutine.resume(coroutine.create(function()
 		
 		Button.ClipsDescendants = true
 		
-		local Circle = script:WaitForChild("Circle"):Clone()
+		local Circle = Circle:Clone()
 			Circle.Parent = Button
 			local NewX = X - Circle.AbsolutePosition.X
 			local NewY = Y - Circle.AbsolutePosition.Y
@@ -34,23 +59,6 @@ function CircleClick(Button, X, Y)
 			
 	end))
 end
-
-local MainGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local ContentFrame = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local Menu = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-local UIGradient = Instance.new("UIGradient")
-local UIGradient_2 = Instance.new("UIGradient")
-local UIListLayout = Instance.new("UIListLayout")
-local UIPadding = Instance.new("UIPadding")
-local UICorner_4 = Instance.new("UICorner")
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-local UIGradient_3 = Instance.new("UIGradient")
-local UIGradient_4 = Instance.new("UIGradient")
 
 MainGui.Name = "MainGui"
 MainGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
