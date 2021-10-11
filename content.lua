@@ -1,4 +1,4 @@
-print("Init")
+print("Initiated")
 local Universus = {}
 
 local TweenService = game:GetService("TweenService")
