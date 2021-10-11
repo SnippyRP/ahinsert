@@ -23,6 +23,7 @@ local UIGradient_3 = Instance.new("UIGradient")
 local UIGradient_4 = Instance.new("UIGradient")
 local Circle = Instance.new("ImageLabel")
 
+Circle.Name = "Circle"
 Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Circle.BackgroundTransparency = 1.000
 Circle.ZIndex = 10
