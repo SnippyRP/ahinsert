@@ -1,9 +1,39 @@
-print("Initiated")
+print("Initiated15653536")
 local Universus = {}
 
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local Mouse = game.Players.LocalPlayer:GetMouse()
+
+function CircleClick(Button, X, Y)
+	coroutine.resume(coroutine.create(function()
+		
+		Button.ClipsDescendants = true
+		
+		local Circle = script:WaitForChild("Circle"):Clone()
+			Circle.Parent = Button
+			local NewX = X - Circle.AbsolutePosition.X
+			local NewY = Y - Circle.AbsolutePosition.Y
+			Circle.Position = UDim2.new(0, NewX, 0, NewY)
+		
+		local Size = 0
+			if Button.AbsoluteSize.X > Button.AbsoluteSize.Y then
+				 Size = Button.AbsoluteSize.X*1.5
+			elseif Button.AbsoluteSize.X < Button.AbsoluteSize.Y then
+				 Size = Button.AbsoluteSize.Y*1.5
+			elseif Button.AbsoluteSize.X == Button.AbsoluteSize.Y then																										Size = Button.AbsoluteSize.X*1.5
+			end
+		
+		local Time = 0.5
+			Circle:TweenSizeAndPosition(UDim2.new(0, Size, 0, Size), UDim2.new(0.5, -Size/2, 0.5, -Size/2), "Out", "Quad", Time, false, nil)
+			for i=1,10 do
+				Circle.ImageTransparency = Circle.ImageTransparency + 0.01
+				wait(Time/10)
+			end
+			Circle:Destroy()
+			
+	end))
+end
 
 local MainGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -21,117 +51,6 @@ local UICorner_4 = Instance.new("UICorner")
 local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
 local UIGradient_3 = Instance.new("UIGradient")
 local UIGradient_4 = Instance.new("UIGradient")
-local Circle = Instance.new("ImageLabel")
-local NotificationHolder = Instance.new("Frame")
-
-Circle.Name = "Circle"
-Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle.BackgroundTransparency = 1.000
-Circle.ZIndex = 10
-Circle.Image = "rbxassetid://266543268"
-Circle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle.ImageTransparency = 0.900
-
-NotificationHolder.Name = "NotificationHolder"
-NotificationHolder.Parent = MainGui
-NotificationHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NotificationHolder.BackgroundTransparency = 1.000
-NotificationHolder.Position = UDim2.new(-4.46816664e-08, 0, 0, 0)
-NotificationHolder.Size = UDim2.new(0.192891866, 0, 0.989010155, 0)
-
-function CircleClick(Button, X, Y)
-	coroutine.resume(coroutine.create(function()
-		
-		Button.ClipsDescendants = true
-		
-		local Circle = Circle:Clone()
-			Circle.Parent = Button
-			local NewX = X - Circle.AbsolutePosition.X
-			local NewY = Y - Circle.AbsolutePosition.Y
-			Circle.Position = UDim2.new(0, NewX, 0, NewY)
-		
-		local Size = 0
-			if Button.AbsoluteSize.X > Button.AbsoluteSize.Y then
-				 Size = Button.AbsoluteSize.X*1.5
-			elseif Button.AbsoluteSize.X < Button.AbsoluteSize.Y then
-				 Size = Button.AbsoluteSize.Y*1.5
-			elseif Button.AbsoluteSize.X == Button.AbsoluteSize.Y then																										Size = Button.AbsoluteSize.X*1.5
-			end
-		
-		local Time = 1
-			Circle:TweenSizeAndPosition(UDim2.new(0, Size, 0, Size), UDim2.new(0.5, -Size/2, 0.5, -Size/2), "Out", "Quad", Time, false, nil)
-			for i=1,10 do
-				Circle.ImageTransparency = Circle.ImageTransparency + 0.01
-				wait(Time/10)
-			end
-			Circle:Destroy()	
-	end))
-end
-
-
-
-function notification(content)
-	local UIListLayout = Instance.new("UIListLayout")
-local Notification = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local UIGradient = Instance.new("UIGradient")
-local MainFrame = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-local UIGradient_2 = Instance.new("UIGradient")
-
-UIListLayout.Parent = NotificationHolder
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-UIListLayout.Padding = UDim.new(0.0250000004, 0)
-
-Notification.Name = "Notification"
-Notification.Parent = NotificationHolder
-Notification.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Notification.Position = UDim2.new(0.0445000045, 0, 0.913579404, 0)
-Notification.Size = UDim2.new(0.911000013, 0, 0.0864206254, 0)
-
-UICorner.CornerRadius = UDim.new(0, 10)
-UICorner.Parent = Notification
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(96, 202, 249)), ColorSequenceKeypoint.new(0.24, Color3.fromRGB(197, 164, 251)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(223, 157, 255)), ColorSequenceKeypoint.new(0.77, Color3.fromRGB(207, 182, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(183, 227, 233))}
-UIGradient.Parent = Notification
-
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = Notification
-MainFrame.BackgroundColor3 = Color3.fromRGB(31, 33, 30)
-MainFrame.Position = UDim2.new(0.0124979345, 0, 0.0426586121, 0)
-MainFrame.Size = UDim2.new(0.969887078, 0, 0.89530015, 0)
-
-UICorner_2.CornerRadius = UDim.new(0, 10)
-UICorner_2.Parent = MainFrame
-
-TextButton.Parent = MainFrame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BackgroundTransparency = 1.000
-TextButton.Size = UDim2.new(1, 0, 1, 0)
-TextButton.Font = Enum.Font.ArialBold
-TextButton.Text = content
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-UITextSizeConstraint.Parent = TextButton
-UITextSizeConstraint.MaxTextSize = 20
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(96, 202, 249)), ColorSequenceKeypoint.new(0.24, Color3.fromRGB(197, 164, 251)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(223, 157, 255)), ColorSequenceKeypoint.new(0.77, Color3.fromRGB(207, 182, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(183, 227, 233))}
-UIGradient_2.Parent = TextButton
-	
-	
-	TextButton.MouseButton1Click:Connect(function()
-		Notification:Destroy()
-	end)
-	
-	
-end
 
 MainGui.Name = "MainGui"
 MainGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -161,7 +80,7 @@ Menu.Parent = ContentFrame
 Menu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Menu.BackgroundTransparency = 1.000
 Menu.Size = UDim2.new(1, 0, 1, 0)
-Menu.ZIndex = 2s
+Menu.ZIndex = 2
 
 UIListLayout.Parent = Menu
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -227,5 +146,4 @@ end)
    end)
 
 end
-notification("Universus loaded")
 return Universus
