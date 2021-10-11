@@ -28,7 +28,7 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = MainGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(31, 33, 30)
 MainFrame.Position = UDim2.new(0.445827246, 0, 0.205997393, 0)
-MainFrame.Size = UDim2.new(0.277, 0,0.275, 0)
+MainFrame.Size = UDim2.new(0.277, 0,0.324, 0)
 MainFrame.ZIndex = 2
 
 UICorner.CornerRadius = UDim.new(0, 6)
