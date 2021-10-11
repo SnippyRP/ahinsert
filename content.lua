@@ -72,7 +72,7 @@ Button.Name = "Button"
 Button.Parent = Menu
 Button.BackgroundColor3 = Color3.fromRGB(98, 104, 95)
 Button.Position = UDim2.new(0.136000007, 0, 0.42899999, 0)
-Button.Size = UDim2.new(0.694000006, 0, 0.138999999, 0)
+Button.Size = UDim2.new(0.965, 0,0.132, 0)
 Button.ZIndex = 2
 
 UICorner.Parent = Button
@@ -88,6 +88,7 @@ TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
+TextButton.TextScaled = true
 
 UITextSizeConstraint.Parent = TextButton
 UITextSizeConstraint.MaxTextSize = 20
@@ -106,12 +107,6 @@ end)
   TextButton.MouseLeave:Connect(function()
 	local tween = TweenService:Create(UIGradient_2, TweenInfo.new(.25), {["Rotation"] = 0});tween:Play()
 	local tween = TweenService:Create(Button, TweenInfo.new(.25), {["BackgroundColor3"] = Color3.fromRGB(98, 104, 95)});tween:Play()
-end)
-  
-TextButton.Activated:Connect(function()
-	local tween = TweenService:Create(Button, TweenInfo.new(.1), {["Size"] = UDim2.new(0.613, 0,0.097, 0),["Position"] = UDim2.new(0.175, 0,0.451, 0)});tween:Play()
-	wait(.1)
-	local tween = TweenService:Create(Button, TweenInfo.new(.1), {["Size"] = UDim2.new(0.694, 0,0.139, 0),["Position"] = UDim2.new(0.136, 0,0.429, 0)});tween:Play()
 end)
   
   TextButton.MouseButton1Click:Connect(function()
