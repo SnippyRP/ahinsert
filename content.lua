@@ -9,5 +9,6 @@ local run = game:GetService("RunService")
 local Utility = {}
 local Objects = {}
 function Kavo:Prt(frame, parent)
-  print("DRAG!")
+	print("DRAG!")
+end
 return Kavo
