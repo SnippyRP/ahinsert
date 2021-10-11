@@ -124,7 +124,11 @@ UITextSizeConstraint.MaxTextSize = 20
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(96, 202, 249)), ColorSequenceKeypoint.new(0.24, Color3.fromRGB(197, 164, 251)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(223, 157, 255)), ColorSequenceKeypoint.new(0.77, Color3.fromRGB(207, 182, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(183, 227, 233))}
 UIGradient_2.Parent = TextButton
 	
-	
+	coroutine.wrap(function()
+		while wait() do
+			UIGradient.Rotation += 1
+		end
+	end)()
 	
 	TextButton.MouseButton1Click:Connect(function()
 		Notification:Destroy()
