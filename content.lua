@@ -59,7 +59,7 @@ UIPadding.Parent = Menu
 UIPadding.PaddingLeft = UDim.new(0, 10)
 UIPadding.PaddingTop = UDim.new(0, 10)
 
-function Kavo:Prt(name)
+function Universus:Prt(name)
   print(name)
 local Button = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
