@@ -1,1 +1,1 @@
-print("While I push updated, Ill obfuscate it :skull:")
+print("While I push updates, Ill obfuscate it :skull:")
